@@ -1,0 +1,147 @@
+<!-- Loading Overlay -->
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading...</div>
+  </div>
+</div>
+
+<div class="page-container" [class.loaded]="!isLoading">
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <a class="logo" routerLink="/">
+          <div class="logo-icon">BS</div>
+          BookStorie<span class="ai-text">.ai</span>
+        </a>
+        <div class="nav-center">
+          <a class="nav-link" routerLink="/create"
+            ><i class="fas fa-plus-circle me-1"></i>CREATE</a
+          >
+          <a class="nav-link" routerLink="/illustrator"
+            ><i class="fas fa-paint-brush me-1"></i>ILLUSTRATOR</a
+          >
+          <a class="nav-link" routerLink="/gallery"
+            ><i class="fas fa-images me-1"></i>GALLERY</a
+          >
+          <a class="nav-link" routerLink="/pricing"
+            ><i class="fas fa-tag me-1"></i>PRICING</a
+          >
+          <a class="nav-link" routerLink="/guide"
+            ><i class="fas fa-book me-1"></i>GUIDE</a
+          >
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <a class="login-icon" routerLink="/auth/login"><i class="fas fa-user"></i></a>
+          <button class="menu-toggle" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.active]="isMobileMenuOpen">
+    <button class="close-menu" (click)="closeMobileMenu()" aria-label="Close menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <a class="nav-link" routerLink="/create" (click)="closeMobileMenu()"
+      ><i class="fas fa-plus-circle me-1"></i>CREATE</a
+    >
+    <a class="nav-link" routerLink="/illustrator" (click)="closeMobileMenu()"
+      ><i class="fas fa-paint-brush me-1"></i>ILLUSTRATOR</a
+    >
+    <a class="nav-link" routerLink="/gallery" (click)="closeMobileMenu()"
+      ><i class="fas fa-images me-1"></i>GALLERY</a
+    >
+    <a class="nav-link" routerLink="/pricing" (click)="closeMobileMenu()"
+      ><i class="fas fa-tag me-1"></i>PRICING</a
+    >
+    <a class="nav-link" routerLink="/guide" (click)="closeMobileMenu()"
+      ><i class="fas fa-book me-1"></i>GUIDE</a
+    >
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <div class="content-wrapper">
+      <div class="text-content">
+        <h1 class="hero-title">Turn your imagination into magical stories</h1>
+        <p class="hero-subtitle">
+          Create personalized children's books where your child becomes the
+          hero! With AI-powered storytelling and custom illustrations, bring
+          their adventures to life. Choose from various themes, add photos,
+          and create unforgettable memories that will inspire their love for
+          reading.
+        </p>
+        <div class="buttons-wrapper">
+          <button class="primary-btn" routerLink="/create">
+            <i class="fas fa-magic me-2"></i>Create Yours
+          </button>
+          <button class="secondary-btn" routerLink="/templates">
+            <i class="fas fa-images me-2"></i>View Templates
+          </button>
+        </div>
+      </div>
+
+      <!-- Image Slider -->
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide" [class.active]="currentSlide === 0">
+            <img
+              [src]="'assets/images/Ahmad-book.png'"
+              alt="Book 1"
+              class="main-image"
+            />
+            <img
+              [src]="'assets/images/Ahmad.jpg'"
+              alt="Profile 1"
+              class="profile-picture"
+            />
+            <div class="slide-overlay">
+              <h3>Dear Ahmad,</h3>
+              <p>
+                May your curiosity guide you to amazing adventures and bright
+                discoveries. Believe in yourself, smile every day, and never
+                stop exploring!
+              </p>
+            </div>
+          </div>
+          <div class="slide" [class.active]="currentSlide === 1">
+            <img
+              [src]="'assets/images/Tasnime-book.png'"
+              alt="Book 2"
+              class="main-image"
+            />
+            <img
+              [src]="'assets/images/Tasnime.jpg'"
+              alt="Profile 2"
+              class="profile-picture"
+            />
+            <div class="slide-overlay">
+              <h3>Dear Tasnime,</h3>
+              <p>
+                May your imagination soar as high as the stars in the sky.
+                Dream big, laugh often, and learn always!
+              </p>
+            </div>
+          </div>
+          <div class="slide" [class.active]="currentSlide === 2">
+            <img [src]="'assets/images/Ali-book.png'" alt="Book 3" class="main-image" />
+            <img
+              [src]="'assets/images/Ali.jpg'"
+              alt="Profile 3"
+              class="profile-picture"
+            />
+            <div class="slide-overlay">
+              <h3>Space Explorer</h3>
+              <p>Join Emma on her intergalactic space adventure</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

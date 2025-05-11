@@ -1,0 +1,25 @@
+<div class="loading-overlay" *ngIf="isLoading">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <div class="loading-text">Loading...</div>
+  </div>
+</div>
+
+<div class="index-container" [class.loaded]="!isLoading">
+  <div class="logo">
+    <div class="logo-icon">BS</div>
+    <div class="logo-text">BookStorie<span class="ai-text">.ai</span></div>
+  </div>
+  <div class="welcome-section">
+    <h1>{{ title }}</h1>
+    <p class="subtitle">Create magical stories with AI</p>
+    <div class="cta-buttons">
+      <button class="auth-btn" routerLink="/auth/login">
+        <i class="fas fa-sign-in-alt me-2"></i>Sign In
+      </button>
+      <button class="auth-btn" routerLink="/auth/register">
+        <i class="fas fa-user-plus me-2"></i>Sign Up
+      </button>
+    </div>
+  </div>
+</div> 

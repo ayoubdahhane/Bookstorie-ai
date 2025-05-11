@@ -1,0 +1,27 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.min.css';
+
+:root {
+  --primary-color: #6c63ff; /* Vibrant Purple */
+  --secondary-color: #4ecdc4; /* Turquoise */
+  --accent-color: #ffb347; /* Warm Orange */
+  --background-color: #f8f7ff; /* Soft Light Purple */
+  --text-color: #2d3436; /* Dark Gray */
+  --highlight-color: #ff9999; /* Soft Coral */
+  --green-color: #ffb347; /* Fresh Green */
+  --blue-dark: #2980B9;          /* Dark Blue */
+}
+
+body {
+  font-family: 'Comic Sans MS', 'Segoe UI', 'Arial', sans-serif;
+  background-color: var(--background-color);
+  background-image: 
+    radial-gradient(var(--secondary-color) 1px, transparent 1px),
+    radial-gradient(var(--highlight-color) 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+} 
